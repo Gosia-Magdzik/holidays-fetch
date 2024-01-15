@@ -1,9 +1,9 @@
-
+import { UsHolidays } from "./components";
 
 function App() {
   return (
     <>
-      Data
+      <UsHolidays/>
     </>
   );
 }
