@@ -2,6 +2,9 @@
 
 I crafted this simple web application as a personal exercise to reinforce my skills in working with Promises and fetching data from APIs. Through hands-on implementation, I walked through the basics of structuring API requests, managing responses, and handling data within React components. The added touch of TypeScript enhances the overall development experience, making this a valuable practice endeavor.
 
+## Data Source
+The data used in this project was sourced from [Mixed Analytics](https://mixedanalytics.com/blog/list-actually-free-open-no-auth-needed-apis/)
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
