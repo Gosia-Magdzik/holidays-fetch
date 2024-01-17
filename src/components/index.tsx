@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import { APIurl } from '../api_links';
-import { Wrapper } from './styled';
+import { Wrapper,
+      Table,
+ } from './styled';
 
 interface apiProps {
   date: string;
@@ -29,6 +31,26 @@ export const UsHolidays = () => {
 
   return (
     <Wrapper>
+      {apiData && apiData.length > 0 && (
+        <h2>Public Holidays {apiData[0].countryCode}</h2>
+      )}
+      <Table>
+        <thead>
+          <tr>
+            <th>The Date</th>
+            <th>Holiday Name</th>
+          </tr>
+        </thead>
+
+        <tbody>
+        {apiData && apiData.map((info, index) =>
+          <tr key={index}>
+            <td>{info.date}</td>
+            <td>{info.name}</td>
+          </tr>
+        )}
+        </tbody>
+      </Table>
 
     </Wrapper>
   )
