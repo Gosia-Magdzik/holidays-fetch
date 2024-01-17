@@ -30,6 +30,19 @@ export const UsHolidays = () => {
     }
   }
 
+  function changeDateFormat (dateString: string | number | Date) {
+
+    const options = {
+      year: 'numeric',
+      month: 'long',
+      day: 'numeric',
+    } as Intl.DateTimeFormatOptions;
+
+    const date = new Date(dateString)
+
+    return date.toLocaleDateString('en-UK', options)
+  }
+
   return (
     <Wrapper>
       {apiData && apiData.length > 0 && (
@@ -48,7 +61,7 @@ export const UsHolidays = () => {
         <tbody>
         {apiData && apiData.map((info, index) =>
           <tr key={index}>
-            <td>{info.date}</td>
+            <td>{changeDateFormat(info.date)}</td>
             <td>{info.name}</td>
           </tr>
         )}
