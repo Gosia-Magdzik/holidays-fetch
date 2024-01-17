@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { APIurl } from '../api_links';
 import { Wrapper,
       Table,
+      Title,
  } from './styled';
 
 interface apiProps {
@@ -32,7 +33,9 @@ export const UsHolidays = () => {
   return (
     <Wrapper>
       {apiData && apiData.length > 0 && (
-        <h2>Public Holidays {apiData[0].countryCode}</h2>
+        <Title>
+          Public Holidays {apiData[0].countryCode}
+        </Title>
       )}
       <Table>
         <thead>
@@ -51,7 +54,6 @@ export const UsHolidays = () => {
         )}
         </tbody>
       </Table>
-
     </Wrapper>
   )
 }
