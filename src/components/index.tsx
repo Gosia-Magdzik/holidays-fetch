@@ -1,9 +1,16 @@
 import React, { useEffect, useState } from 'react'
-import { APIurl } from '../api_links'
+import { APIurl } from '../api_links';
+import { Wrapper } from './styled';
+
+interface apiProps {
+  date: string;
+  countryCode: string;
+  name: string;
+}
 
 export const UsHolidays = () => {
 
-  const [apiData, setApiData] = React.useState();
+  const [apiData, setApiData] = React.useState<apiProps[]>();
 
   React.useEffect(() => {
     fetchAPI();
@@ -21,8 +28,8 @@ export const UsHolidays = () => {
   }
 
   return (
-    <div>
+    <Wrapper>
 
-    </div>
+    </Wrapper>
   )
 }
