@@ -28,6 +28,10 @@ export const Table = styled.table`
         border: 1px solid #ffffff;
         background-color: #9bafba;
         padding: 1rem;
+
+        &:hover {
+            background-color: #b5daee;
+        }
     }
 
     td{
