@@ -4,6 +4,8 @@ import { Wrapper,
       Table,
       Title,
  } from './styled';
+ import axios from 'axios';
+import { error } from 'console';
 
 interface apiProps {
   date: string;
@@ -19,16 +21,28 @@ export const UsHolidays = () => {
     fetchAPI();
   }, [])
 
-  const fetchAPI = async () => {
-    try {
-      const response = await fetch(APIurl);
-      const data = await response.json();
-      setApiData(data);
-    }
-    catch (error) {
+  //const fetchAPI = async () => {
+  //  try {
+  //    const response = await fetch(APIurl);
+  //    const data = await response.json();
+  //    setApiData(data);
+  //  }
+  //  catch (error) {
+  //    console.error("Ups.., sth. went wrong", error)
+  //  }
+  //}
+
+  //using AXIOS
+  const fetchAPI = () => {
+    axios.get(APIurl)
+    .then((response) => {
+      setApiData(response.data)
+    })
+    .catch((error) => {
       console.error("Ups.., sth. went wrong", error)
-    }
+    })
   }
+
 
   function changeDateFormat (dateString: string | number | Date) {
 
